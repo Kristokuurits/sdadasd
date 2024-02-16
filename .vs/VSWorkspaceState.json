@@ -1,0 +1,13 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\teamtrack-api",
+    "\\teamtrack-api\\Controllers",
+    "\\teamtrack-api\\Model",
+    "\\teamtrack-frontend",
+    "\\teamtrack-frontend\\public",
+    "\\teamtrack-frontend\\public\\config"
+  ],
+  "SelectedNode": "\\teamtrack-frontend\\public\\config\\runtime-config.json",
+  "PreviewInSolutionExplorer": false
+}
