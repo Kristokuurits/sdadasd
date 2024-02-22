@@ -2,6 +2,7 @@
   <div
     class="min-h-screen bg-grey-50 py-12 px-4 sm:px-6 lg:px=8 text-black-300"
   >
+
     <div class="text-center">
       <h1 class="font-bold">{{ title }}</h1>
       <DataTable :value="events" v-if="events.length > 0">

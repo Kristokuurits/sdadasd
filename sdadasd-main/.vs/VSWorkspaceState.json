@@ -6,8 +6,11 @@
     "\\teamtrack-api\\Model",
     "\\teamtrack-frontend",
     "\\teamtrack-frontend\\public",
-    "\\teamtrack-frontend\\public\\config"
+    "\\teamtrack-frontend\\public\\config",
+    "\\teamtrack-frontend\\src",
+    "\\teamtrack-frontend\\src\\components",
+    "\\teamtrack-frontend\\src\\router"
   ],
-  "SelectedNode": "\\teamtrack-frontend\\public\\config\\runtime-config.json",
+  "SelectedNode": "\\teamtrack-frontend\\src\\App.vue",
   "PreviewInSolutionExplorer": false
 }
