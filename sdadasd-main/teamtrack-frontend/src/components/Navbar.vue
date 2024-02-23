@@ -1,6 +1,6 @@
 <template>
     <div class="topnav">
-        <a class="active" href="#home">Home</a>
+        <a class="active" href="/">Home</a>
         <a href="/coachEvents">Coachevents</a>
         <a href="/athleteEvents">Athleteevents</a>
     </div>
@@ -14,18 +14,32 @@
 </script>
 
 <style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
+    body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+    }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
+    .topnav {
+        overflow: hidden;
+        background-color: black;
+    }
 
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+        .topnav a {
+            float: left;
+            color: #ff0000;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 17px;
+        }
+
+            .topnav a:hover {
+                background-color: #ddd;
+                color: black;
+            }
+
+            .topnav a.active {
+                background-color: #04AA6D;
+                color: red;
+            }
 </style>
