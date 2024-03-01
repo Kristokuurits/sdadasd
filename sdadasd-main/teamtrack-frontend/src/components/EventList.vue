@@ -6,34 +6,38 @@
     <div class="text-center">
       <h1 class="font-bold">{{ title }}</h1>
       <DataTable :value="events" v-if="events.length > 0">
-        <Column field="type" header="Nimetus" />
-        <Column field="location" header="Asukoht" />
-        <Column field="date" header="Kuupäev" />
-        <Column field="time" header="Kellaaeg" />
-        <Column v-if="!isAthlete">
-          <template #body="{ data }">
-            <router-link
-                class="border bg-blue-400 text-blue-900 py-0 px-2 mx-2 border-red-900 font-bold"
-                :to="'update/' + data.id"
-              >
-                ⭮
-              </router-link>
+          <Column field="type" header="Nimetus" />
+          <Column field="location" header="Asukoht" />
+          <Column id="Column" name="Column" header="Kuupäev" >
+          <template #body="{data}">
+              {{ showDate(data.date).date}}
 
-            <button
-              class="border bg-red-400 text-white py-0 px-2 border-red-900 font-bold"
-              @click="remove(data)"
-            >
-              Delete
-            </button>
-
-            <button
-              class="border bg-green-400 text-white py-0 px-2 border-green-900 font-bold"
-              @click="showDetails(data)"
-            >
-              Details
-            </button>
           </template>
-        </Column>
+          </Column>
+          <Column class="w-30" header="Kellaaeg" >
+          <template #body="{data}">
+              {{ showDate(data.date).time}}
+
+          </template>
+          </Column>
+          <Column v-if="!isAthlete">
+              <template #body="{ data }">
+                  <router-link class="border bg-blue-400 text-blue-900 py-0 px-2 mx-2 border-red-900 font-bold"
+                               :to="'update/' + data.id">
+                      ⭮
+                  </router-link>
+
+                  <button class="border bg-red-400 text-white py-0 px-2 border-red-900 font-bold"
+                          @click="remove(data)">
+                      Delete
+                  </button>
+
+                  <button class="border bg-green-400 text-white py-0 px-2 border-green-900 font-bold"
+                          @click="showDetails(data)">
+                      Details
+                  </button>
+              </template>
+          </Column>
       </DataTable>
       <div v-else>Sündmused puuduvad</div>
     </div>
@@ -58,6 +62,16 @@ import { storeToRefs } from "pinia";
 import { defineProps, onMounted, ref, watch } from "vue";
 import { useRoute } from "vue-router";
 
+    const formatDateTime = (isoString: string) => {
+        const datetime = new Date(isoString);
+        const timezone = "UTC";
+        const optionsDate: Intl.DateTimeFormatOptions = { year: 'numeric', month: '2-digit', day: '2-digit', timeZone: timezone };
+        const optionsTime: Intl.DateTimeFormatOptions = { hour: '2-digit', minute: '2-digit', hour12: false, timeZone: timezone };
+        return {
+            date: datetime.toLocaleDateString(undefined, optionsDate),
+            time: datetime.toLocaleTimeString(undefined, optionsTime)
+        }
+    }
 
 const route = useRoute();
 
