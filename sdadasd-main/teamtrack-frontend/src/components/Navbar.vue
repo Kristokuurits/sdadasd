@@ -3,6 +3,7 @@
         <a class="active" href="/">Home</a>
         <a href="/coachEvents">Coachevents</a>
         <a href="/athleteEvents">Athleteevents</a>
+        <a href="/AddEventForm">AddEventForm</a>
     </div>
 
     <div style="padding-left:16px">

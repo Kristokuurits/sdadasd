@@ -9,16 +9,16 @@
           <Column field="type" header="Nimetus" />
           <Column field="location" header="Asukoht" />
           <Column id="Column" name="Column" header="Kuupäev" >
-          <template #body="{data}">
-              {{ showDate(data.date).date}}
+              <template #body="{data}">
+                  {{ formatDateTime(data.date).date}}
 
-          </template>
+              </template>
           </Column>
           <Column class="w-30" header="Kellaaeg" >
-          <template #body="{data}">
-              {{ showDate(data.date).time}}
+              <template #body="{data}">
+                  {{ formatDateTime(data.date).time}}
 
-          </template>
+              </template>
           </Column>
           <Column v-if="!isAthlete">
               <template #body="{ data }">
