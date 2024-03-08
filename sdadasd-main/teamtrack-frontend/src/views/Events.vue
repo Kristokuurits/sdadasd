@@ -9,5 +9,5 @@ import navbar from "../components/Navbar.vue"
 import EventList from "../components/EventList.vue"
   import {defineProps} from "vue";
   
-  defineProps<{ title: String, isAthlete: Boolean }>();
+  defineProps<{ title: String, isAthlete: Boolean }>(); 
   </script>
